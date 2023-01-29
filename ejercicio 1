@@ -1,0 +1,19 @@
+import tkinter as tk
+
+root = tk.Tk()
+root.title("RadioButton Example")
+
+selected = tk.StringVar()
+selected.set(None)
+
+options = ["Option 1", "Option 2", "Option 3"]
+
+def show_selected():
+    print("Selected:", selected.get())
+
+for option in options:
+    tk.Radiobutton(root, text=option, variable=selected, value=option, command=show_selected).pack()
+
+tk.Button(root, text="Reset", command=lambda: selected.set(None)).pack()
+
+root.mainloop()
