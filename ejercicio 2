@@ -1,0 +1,23 @@
+import tkinter as tk
+
+# Crea la raíz de la ventana
+root = tk.Tk()
+root.title("Simple Interface")
+
+# Crea una variable de tipo String para guardar la opción seleccionada
+selected = tk.StringVar()
+selected.set(None)  # Al principio, no hay ninguna opción seleccionada
+
+# Crea una lista de opciones para mostrar en la interfaz
+options = ["Option 1", "Option 2", "Option 3"]
+
+# Crea un label para mostrar un mensaje en la interfaz
+label = tk.Label(root, text="Selecciona una opción:")
+label.pack()
+
+# Crea un botón de radio para cada opción en la lista
+for option in options:
+    tk.Radiobutton(root, text=option, variable=selected, value=option).pack()
+
+# Inicia la ventana y espera a que el usuario la cierre
+root.mainloop()
